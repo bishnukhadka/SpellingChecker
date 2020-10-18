@@ -3,7 +3,7 @@ using namespace std;
 
 int main()
 {
-    cout << "sdkfhksjd";
+    cout << "sdkfhksjd" << endl;
     cout << "aabx" << endl;
     cout << "gupte" << endl;
 
