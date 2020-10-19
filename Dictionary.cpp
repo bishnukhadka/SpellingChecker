@@ -8,6 +8,8 @@
 
 using namespace std;
 
+Dictionary ::Dictionary() {}
+
 Dictionary ::Dictionary(const string &filename)
 {
     ifstream fin;

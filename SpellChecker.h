@@ -9,6 +9,8 @@ using namespace std;
 class SpellChecker
 {
 private:
+    vector<string> suggestion_list;
+
     void CreateWordList_bySwappingAdjCharacters(const string &word);
 
     void CreateWordList_byDeletingCharacters(const string &word);

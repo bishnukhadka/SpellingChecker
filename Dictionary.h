@@ -10,13 +10,13 @@ using namespace std;
 class Dictionary
 {
 private:
-    unordered_map<string, string> wordDictionary;
-
     vector<string> suggestions;
 
     SpellChecker spell_checker;
 
 public:
+    unordered_map<string, string> wordDictionary;
+    Dictionary();
     Dictionary(const string &filename);
 
     void inputFile(const string &filename);
