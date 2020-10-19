@@ -10,7 +10,7 @@ using namespace std;
 class Dictionary
 {
 private:
-    unordered_map<string, string> wordDictionay;
+    unordered_map<string, string> wordDictionary;
 
     vector<string> suggestions;
 
