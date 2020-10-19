@@ -1,2 +1,4 @@
 # demoRep
-This repository is for testing if git and github is working fine on local.
+
+This repository is for school project.
+Project: Spelling Corrector program
