@@ -1,4 +1,3 @@
-
 #ifndef SPELLCHECKER_H
 #define SPELLCHECKER_H
 
