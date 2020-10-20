@@ -49,12 +49,18 @@ void SpellChecker::CreateWordList_byReplacingCharacters(const string &word)
 
     for (int i = 0; i < word.size(); i++)
     {
-        string newWord = word;
-        newWord.erase(newWord.begin() + i);
-
-        if (contains(newWord))
+        char ch = 'a';
+        for (int j = 0; j < 26; j++)
         {
-            suggestion_list.push_back(newWord);
+            string newWord = word;
+            newWord[i] = ch;
+
+            if (contains(newWord))
+            {
+                suggestion_list.push_back(newWord);
+            }
+
+            ch++;
         }
     }
 }
@@ -81,15 +87,15 @@ void SpellChecker::CreateWordList_byInsertingCharacters(const string &word)
 
 void SpellChecker::to_lower_case(string &word)
 {
-    for (auto &ch : word)
+    for (int i = 0; i < word.length(); i++)
     {
-        ch = tolower(ch);
+        word[i] = tolower(word[i]);
     }
 }
 
 void SpellChecker::remove_unnecessary_characters(string &word)
 {
-    if (word[word.length() - 1] == '.' || word[word.length() - 1] == '!' || word[word.length() - 1] == '.')
+    if (word[word.length() - 1] == '.' || word[word.length() - 1] == '!' || word[word.length() - 1] == '?')
     {
         word.erase(word.length() - 1);
     }
@@ -105,6 +111,7 @@ bool SpellChecker::contains(const string &word)
 
     return false;
 }
+
 vector<string> SpellChecker::get_top_suggestions()
 {
 }
