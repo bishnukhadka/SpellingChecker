@@ -7,6 +7,8 @@
 
 using namespace std;
 
+Dictionary dictionary("Words.txt");
+
 void SpellChecker ::CreateWordList_bySwappingAdjCharacters(string word)
 {
 
@@ -31,7 +33,6 @@ void SpellChecker ::CreateWordList_bySwappingAdjCharacters(string word)
 
 void SpellChecker::CreateWordList_byDeletingCharacters(string word)
 {
-
     for (int i = 0; i < word.size(); i++)
     {
         string newWord = word;
@@ -82,18 +83,26 @@ void SpellChecker::remove_unnecessary_characters(string &word)
     }
 }
 
+vector<string> SpellChecker::get_suggestions(const string &word)
+{
+    CreateWordList_byDeletingCharacters(word);
+    CreateWordList_byReplacingCharacters(word);
+    CreateWordList_bySwappingAdjCharacters(word);
+
+    return suggestion_list;
+}
+
+void SpellChecker::clear_suggestion_list()
+{
+    suggestion_list.clear();
+}
+
 bool SpellChecker::contains(const string &word)
 {
-    Dictionary dictionary;
     if (dictionary.wordDictionary.find(word) != dictionary.wordDictionary.end())
     {
         return true;
     }
 
     return false;
-}
-
-vector<string> SpellChecker::get_suggestions()
-{
-    return suggestion_list;
 }

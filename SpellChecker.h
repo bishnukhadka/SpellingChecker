@@ -20,7 +20,8 @@ public:
     void to_lower_case(string &word);
     void remove_unnecessary_characters(string &word);
     bool contains(const string &word);
-    vector<string> get_suggestions();
+    vector<string> get_suggestions(const string &word);
+    void clear_suggestion_list();
 };
 
 #endif

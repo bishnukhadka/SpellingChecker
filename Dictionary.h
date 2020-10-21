@@ -19,7 +19,7 @@ public:
     Dictionary();
     Dictionary(const string &filename);
 
-    void inputFile(const string &filename);
+    void check_inputFile(const string &filename);
 };
 
 #endif

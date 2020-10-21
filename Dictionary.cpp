@@ -38,7 +38,7 @@ Dictionary ::Dictionary(const string &filename)
     }
 }
 
-void Dictionary ::inputFile(const string &filename)
+void Dictionary ::check_inputFile(const string &filename)
 {
     ifstream fin;
     fin.open(filename);
@@ -53,6 +53,11 @@ void Dictionary ::inputFile(const string &filename)
         {
             spellchecker.to_lower_case(word);
             //changes any word to lowercase
+
+            spellchecker.remove_unnecessary_characters(word);
+            //removes fullstops, exlamation marks and question marks
+            //at the end of the word.
+
             //for each word we have three possibilities,
             // 1. Found in the dictionary so we assume correct.
             // 2. not found, but no sugesstions.
@@ -67,7 +72,9 @@ void Dictionary ::inputFile(const string &filename)
             {
                 // look for alternative spellings of the word.
                 vector<string> alternative_word_list =
-                    spellchecker.get_suggestions();
+                    spellchecker.get_suggestions(word);
+
+                spellchecker.clear_suggestion_list();
 
                 if (alternative_word_list.empty())
                 {
