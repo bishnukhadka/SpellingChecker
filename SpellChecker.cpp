@@ -75,9 +75,10 @@ void SpellChecker::to_lower_case(string &word)
 
 void SpellChecker::remove_unnecessary_characters(string &word)
 {
-    if (word[word.length() - 1] == '.' || word[word.length() - 1] == '!' || word[word.length() - 1] == '?')
+    int last_letter = word.length() - 1;
+    if (word[last_letter] == '.' || word[last_letter] == '!' || word[last_letter] == '?')
     {
-        word.erase(word.length() - 1);
+        word.erase(last_letter);
     }
 }
 

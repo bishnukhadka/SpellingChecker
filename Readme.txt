@@ -42,16 +42,16 @@ private:
 
 public:
 	Bibek:
-	void toLowerCase(string& word);
+	void toLowerCase(string &word);
 		//changes the word to lowercase so that we can compare the word with the dictionary.
         
 	Bibek:
-	void remove_Unnecessary_Characters(string& word);
+	void remove_Unnecessary_Characters(string &word);
 		//removes characters like fullstops, question marks and exclamation marks at the end of a word.
 
 	Bibek:
 		bool contains(const string &word)
-			//checks if the dictionary file contains 
+			//checks if the dictionary file contains the passed word or not.
 	
 	Bibek:   
 		vector<string> getTopSuggestions();
