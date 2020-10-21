@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void SpellChecker ::CreateWordList_bySwappingAdjCharacters(const string &word)
+void SpellChecker ::CreateWordList_bySwappingAdjCharacters(string word)
 {
 
     // try to find some alternating spellings
@@ -29,7 +29,7 @@ void SpellChecker ::CreateWordList_bySwappingAdjCharacters(const string &word)
     }
 }
 
-void SpellChecker::CreateWordList_byDeletingCharacters(const string &word)
+void SpellChecker::CreateWordList_byDeletingCharacters(string word)
 {
 
     for (int i = 0; i < word.size(); i++)
@@ -44,29 +44,9 @@ void SpellChecker::CreateWordList_byDeletingCharacters(const string &word)
     }
 }
 
-void SpellChecker::CreateWordList_byReplacingCharacters(const string &word)
+void SpellChecker::CreateWordList_byReplacingCharacters(string word)
 {
 
-    for (int i = 0; i < word.size(); i++)
-    {
-        char ch = 'a';
-        for (int j = 0; j < 26; j++)
-        {
-            string newWord = word;
-            newWord[i] = ch;
-
-            if (contains(newWord))
-            {
-                suggestion_list.push_back(newWord);
-            }
-
-            ch++;
-        }
-    }
-}
-
-void SpellChecker::CreateWordList_byInsertingCharacters(const string &word)
-{
     for (int i = 0; i < word.size(); i++)
     {
         char ch = 'a';
@@ -112,6 +92,7 @@ bool SpellChecker::contains(const string &word)
     return false;
 }
 
-vector<string> SpellChecker::get_top_suggestions()
+vector<string> SpellChecker::get_suggestions()
 {
+    return suggestion_list;
 }

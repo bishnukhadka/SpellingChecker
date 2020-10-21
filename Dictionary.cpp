@@ -67,7 +67,7 @@ void Dictionary ::inputFile(const string &filename)
             {
                 // look for alternative spellings of the word.
                 vector<string> alternative_word_list =
-                    spellchecker.get_top_suggestions();
+                    spellchecker.get_suggestions();
 
                 if (alternative_word_list.empty())
                 {
