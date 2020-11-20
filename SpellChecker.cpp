@@ -99,12 +99,6 @@ void SpellChecker::clear_suggestion_list()
 
 bool SpellChecker::contains(const string &word)
 {
-    /*if (dictionary.wordDictionary.find(word) != dictionary.wordDictionary.end())
-    {
-        return true;
-    }
-    */
-
     if (dictionary.wordDictionary[word] == word)
     {
         return true;

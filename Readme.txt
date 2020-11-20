@@ -16,7 +16,7 @@ class Dictionary
        	Dictionary(const string &filename)
             	//it will probalay be a good idea to read the dictionary file in the constructor file so, that we can pre load the dictionary unordered_map<string, string>
 
-		void inputFile(const string &filename);
+		void check_inputFile(const string &filename);
 			//input the text file and checks the corrction of the words used.
 
         
@@ -54,5 +54,8 @@ public:
 			//checks if the dictionary file contains the passed word or not.
 	
 	Bibek:   
-		vector<string> getTopSuggestions();
-			//uses the createWordList fucnctions() to create top suggestitons.
+		vector<string> get_suggestions(const string &word);
+			//uses the createWordList fucnctions() to get suggestitons.
+
+	Bishnu:
+		void clear_suggestion_list();
