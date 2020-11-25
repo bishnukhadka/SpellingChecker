@@ -85,9 +85,9 @@ void SpellChecker::remove_unnecessary_characters(string &word)
 
 vector<string> SpellChecker::get_suggestions(const string &word)
 {
-    CreateWordList_byDeletingCharacters(word);
-    CreateWordList_byReplacingCharacters(word);
     CreateWordList_bySwappingAdjCharacters(word);
+    CreateWordList_byReplacingCharacters(word);
+    CreateWordList_byDeletingCharacters(word);
 
     return suggestion_list;
 }
