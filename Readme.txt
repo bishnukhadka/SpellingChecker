@@ -59,3 +59,4 @@ public:
 
 	Bishnu:
 		void clear_suggestion_list();
+		
