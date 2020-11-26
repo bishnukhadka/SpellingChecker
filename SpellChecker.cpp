@@ -100,6 +100,7 @@ void SpellChecker::clear_suggestion_list()
 bool SpellChecker::contains(const string &word)
 {
     if (dictionary.wordDictionary[word] == word)
+    //it is like saying array[0] for array
     {
         return true;
     }

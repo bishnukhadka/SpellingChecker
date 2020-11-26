@@ -64,6 +64,7 @@ void Dictionary ::check_inputFile(const string &filename)
             // 3. not found, but we do find sugesstions.
             cout << word;
             if (wordDictionary.find(word) != wordDictionary.end())
+            //checks if the word is in unordered_map or not.
             {
                 //case 1: found
                 cout << ": ok" << endl;
